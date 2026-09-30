@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub + Jira | Mini Caso</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="tag">MINI CASO PRÁCTICO</p>
+      <h1>GitHub + Jira</h1>
+      <p>
+        Simulación de un flujo de trabajo donde Jira administra la tarea
+        y GitHub administra el código fuente.
+      </p>
+    </header>
+
+    <section class="flow">
+      <article>
+        <span>1</span>
+        <h2>Jira</h2>
+        <p>Se crea una tarea para una nueva funcionalidad.</p>
+      </article>
+      <article>
+        <span>2</span>
+        <h2>GitHub</h2>
+        <p>Se crea una rama usando la clave de Jira.</p>
+      </article>
+      <article>
+        <span>3</span>
+        <h2>Commit / PR</h2>
+        <p>La clave de Jira se incluye en el commit y Pull Request.</p>
+      </article>
+      <article>
+        <span>4</span>
+        <h2>Seguimiento</h2>
+        <p>Jira puede mostrar la actividad de desarrollo relacionada.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Crear una tarea directamente en Jira</h2>
+      <p class="muted">
+        Esta parte es opcional para la exposición. Requiere configurar las
+        variables de Jira en el archivo <code>.env</code>.
+      </p>
+
+      <form id="jiraForm">
+        <label for="summary">Resumen</label>
+        <input id="summary" name="summary"
+          value="Implementar pantalla de inicio de sesión"
+          required>
+
+        <label for="description">Descripción</label>
+        <textarea id="description" name="description" rows="5">Crear una pantalla de inicio de sesión para el sistema.</textarea>
+
+        <button type="submit">Crear tarea en Jira</button>
+      </form>
+
+      <div id="result" class="result hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>Comandos para demostrar GitHub</h2>
+      <pre><code>git checkout -b DEMO-1-login
+git add .
+git commit -m "DEMO-1 Implementar pantalla de inicio de sesión"
+git push -u origin DEMO-1-login</code></pre>
+      <p class="muted">
+        Reemplaza DEMO-1 por la clave real de tu tarea en Jira.
+      </p>
+    </section>
+
+    <footer>
+      <p>Mini caso académico — GitHub + Jira</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
