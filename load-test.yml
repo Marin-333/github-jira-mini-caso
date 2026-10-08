@@ -1,0 +1,19 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 10
+      arrivalRate: 5
+      name: "Fase 1: Calentamiento (5 usuarios/s)"
+    - duration: 20
+      arrivalRate: 10
+      rampTo: 30
+      name: "Fase 2: Rampa de estrés (hasta 30 usuarios/s)"
+    - duration: 10
+      arrivalRate: 30
+      name: "Fase 3: Carga sostenida"
+
+scenarios:
+  - name: "Carga sobre la aplicación web"
+    flow:
+      - get:
+          url: "/"

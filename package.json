@@ -5,10 +5,15 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node src/server.js"
+    "dev": "node src/server.js",
+    "test:load": "artillery run load-test.yml",
+    "test:load:report": "artillery run --output report.json load-test.yml && npx artillery report report.json"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.34"
   }
 }
